@@ -1,0 +1,70 @@
+<form [formGroup]="donorForm" (ngSubmit)="submitDonorDetails()" novalidate style="width: 845px;">
+
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+            <input type="text" name="name" formControlName="name" style="width:30%"/>
+        </div>
+    </div>
+    <div class="errorText" *ngIf="false">
+        <div [hidden]="!name.errors.required">
+            Name is required
+        </div>
+        <div [hidden]="!name.errors.minlength">
+            Min Length is 5
+        </div>
+        <div [hidden]="!name.errors.maxlength">
+            Min Length is 10
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Phone number</label>
+        <div class="col-sm-10">
+            <input type="text" name="phoneNumber" formControlName="phoneNumber" style="width:30%"/>
+        </div>
+    </div>
+    <div class="errorText" *ngIf="false">
+        <div [hidden]="!phoneNumber.errors.required">
+            Phone number is required
+        </div>
+        <div [hidden]="!phoneNumber.errors.pattern">
+            Enter 10 digit phone number
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Blood Group</label>
+        <div class="col-sm-10">
+            <select name="bloodGroup" formControlName="bloodGroup" style="width:30%">
+                <option *ngFor="let group of bloodGropList">{{group}}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Address</label>
+        <div class="col-sm-10">
+            <textarea name="address" formControlName="address" rows="4" cols="31"></textarea>
+        </div>
+    </div>
+    <div class="errorText" *ngIf="false">
+        <div [hidden]="!address.errors.required">
+            Phone number is required
+        </div>
+        <div [hidden]="!address.errors.minLength">
+            Enter a valid address
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-10" style="padding-left:290px">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-10" style="padding-left:290px">
+          <button type="button" (click)="getRepos()" class="btn btn-primary">Get Repos</button>
+        </div>
+      </div>
+</form>
+

@@ -1,0 +1,7 @@
+@import '../../styles/bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css';
+.col-form-label {
+        line-height: 1.0;
+}
+.form-group{
+    margin-bottom:5px;
+}
